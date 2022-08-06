@@ -1,4 +1,4 @@
-package src.classes;
+package src.entities;
 
 import src.UI.DialogBox;
 
