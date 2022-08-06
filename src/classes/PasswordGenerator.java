@@ -1,4 +1,4 @@
-package src.passwordgenerator;
+package src.classes;
 
 import src.UI.DialogBox;
 
