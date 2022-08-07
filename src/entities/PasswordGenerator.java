@@ -5,6 +5,7 @@ import src.UI.DialogBox;
 public class PasswordGenerator {
 
     PasswordGenerator() {
+        //TODO: Move this to UIController
         DialogBox systemDialog = new DialogBox();
     }
     public static void main(String[] args) {
