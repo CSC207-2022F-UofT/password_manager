@@ -9,9 +9,9 @@ public class RadioBox {
     public RadioBox() {
     }
 
-    public void createRadioButton(JFrame dialogBox, String labelText, Color foregroundColor) {
+    public void createRadioButton(JFrame dialogBox, String labelText, Color foregroundColor, int x, int y, int width, int height) {
         radioButton = new JCheckBox(labelText);
-        radioButton.setBounds(70,60,260,30);
+        radioButton.setBounds(x,y,width,height);
         radioButton.setForeground(Color.white);
         if (dialogBox != null) {
             dialogBox.add(radioButton);

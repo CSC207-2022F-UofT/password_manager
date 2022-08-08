@@ -4,14 +4,14 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Button {
-    JButton button;
+    public JButton button;
 
     public Button() {
     }
 
-    public void createButton(JFrame dialogBox, String buttonText, Color foregroundColor) {
+    public void createButton(JFrame dialogBox, String buttonText, Color foregroundColor, int x, int y, int width, int height) {
         button = new JButton(buttonText);
-        button.setBounds(70,60,260,30);
+        button.setBounds(x,y,width,height);
         button.setForeground(Color.white);
         if (dialogBox != null) {
             dialogBox.add(button);

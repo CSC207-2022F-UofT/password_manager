@@ -4,14 +4,14 @@ import javax.swing.*;
 import java.awt.*;
 
 public class ComboBox {
-    JComboBox<String> comboBox;
+    JComboBox comboBox;
 
     public ComboBox() {
     }
 
-    public void createComboBox(JFrame dialogBox, String[] comboBoxItems, Color foregroundColor) {
+    public void createComboBox(JFrame dialogBox, String[] comboBoxItems, Color foregroundColor, int x, int y, int width, int height) {
         comboBox = new JComboBox(comboBoxItems);
-        comboBox.setBounds(70,60,260,30);
+        comboBox.setBounds(x,y,width,height);
         comboBox.setForeground(Color.white);
         if (dialogBox != null) {
             dialogBox.add(comboBox);
