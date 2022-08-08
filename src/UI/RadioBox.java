@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class RadioBox {
-    JCheckBox radioButton;
+    public JCheckBox radioButton;
 
     public RadioBox() {
     }

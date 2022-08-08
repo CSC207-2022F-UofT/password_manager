@@ -67,8 +67,4 @@ public class PasswordGenerator {
         return symbletters.toString();
     }
 
-    public static void main(String[] args) {
-        // TODO code application logic here
-        PasswordGenerator passwordGenerator = new PasswordGenerator();
-    }
 }

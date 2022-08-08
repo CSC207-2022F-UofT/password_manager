@@ -1,12 +1,10 @@
 package src.controller;
 
-import src.UI.DialogBox;
+import src.UI.Button;
 import src.UI.Label;
 import src.UI.TextArea;
-import src.UI.ComboBox;
-import src.UI.RadioBox;
-import src.UI.Button;
 import src.UI.TextField;
+import src.UI.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,12 +14,15 @@ import java.awt.event.ActionListener;
 public class UIController implements ActionListener {
     public void createPasswordGeneratorBox() {
 
+
     // Generating a DialogBox object
         DialogBox dialogBox = new DialogBox();
         dialogBox.createDialogBox("Password Generator", 400, 360);
         dialogBox.jframe.setVisible(true);
         dialogBox.jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         dialogBox.jframe.setResizable(false);
+        Color c = new Color(204,255,255);
+        dialogBox.jframe.getContentPane().setBackground(c);
 
     // Create a label
         Label label = new Label();
@@ -30,19 +31,27 @@ public class UIController implements ActionListener {
     //creating a Combobox to get the password length from the user
     String[] comboBoxItems = {"8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"};
         ComboBox comboBox = new ComboBox();
-        comboBox.createComboBox(dialogBox.jframe, comboBoxItems, Color.blue,230,40,50,20);
+        comboBox.createComboBox(dialogBox.jframe, comboBoxItems, Color.black,230,40,50,20);
+        comboBox.comboBox.setForeground(Color.black);
 
     //Creating radio checkboxes to get the password type from the user
         RadioBox radioBox = new RadioBox();
         //Creating radiobox for Lowercase letters
-        radioBox.createRadioButton(dialogBox.jframe, "Lowercase", Color.blue,110,70,170,30);
+        radioBox.createRadioButton(dialogBox.jframe, "Lowercase", Color.black,110,70,170,30);
+        radioBox.radioButton.setForeground(Color.black);
+        radioBox.radioButton.setBackground(c);
         //Creating radiobox for Uppercase letters
-        radioBox.createRadioButton(dialogBox.jframe, "Uppercase", Color.blue,110,100,170,30);
+        radioBox.createRadioButton(dialogBox.jframe, "Uppercase", Color.black,110,100,170,30);
+        radioBox.radioButton.setForeground(Color.black);
+        radioBox.radioButton.setBackground(c);
         //Creating radiobox for Numbers
-        radioBox.createRadioButton(dialogBox.jframe, "Numbers", Color.blue,110,130,150,30);
+        radioBox.createRadioButton(dialogBox.jframe, "Numbers", Color.black,110,130,150,30);
+        radioBox.radioButton.setForeground(Color.black);
+        radioBox.radioButton.setBackground(c);
         //Creating radiobox for Special characters
-        radioBox.createRadioButton(dialogBox.jframe, "Special Characters", Color.blue,110,160,150,30);
-
+        radioBox.createRadioButton(dialogBox.jframe, "Special Characters", Color.black,110,160,150,30);
+        radioBox.radioButton.setForeground(Color.black);
+        radioBox.radioButton.setBackground(c);
 
     //Creating Button to generate the password
         Button button = new Button();
@@ -65,6 +74,12 @@ public class UIController implements ActionListener {
         label.createLabel(dialogBox.jframe, "Enter your password to check its strength", Color.blue,70,60,260,30);
         TextField passwordTextField = new TextField();
         passwordTextField.createTextField(dialogBox.jframe);
+    }
+
+    public static void main(String[] args) {
+        // TODO code application logic here
+        UIController BaseUI = new UIController();
+        BaseUI.createPasswordGeneratorBox();
     }
 
     /**

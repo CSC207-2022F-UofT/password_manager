@@ -47,11 +47,11 @@ public class GenerateNewPassword {
                 case "LS", "SL" -> (int) binar == 0 ? one : three;
                 // When lowercase letters checkbox & numbers checkbox are selected
                 case "LN", "NL" -> (int) binar == 0 ? one : four;
-                // When lowercase letters checkbox & uppercase letters checkbox are selected
+                // When lowercase letters checkbox & uppercase letters' checkbox are selected
                 case "LU", "UL" -> (int) binar == 0 ? one : two;
                 // When uppercase letters checkbox & numbers checkbox are selected
                 case "UN", "NU" -> (int) binar == 0 ? two : four;
-                // When symbols checkbox & uppercase letters checkbox are selected
+                // When symbols checkbox & uppercase letters' checkbox are selected
                 case "SU", "US" -> (int) binar == 0 ? three : two;
                 // When numbers checkbox & symbols checkbox are selected
                 case "NS", "SN" -> (int) binar == 0 ? four : three;

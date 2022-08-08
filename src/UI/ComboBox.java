@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class ComboBox {
-    JComboBox comboBox;
+    public JComboBox comboBox;
 
     public ComboBox() {
     }
