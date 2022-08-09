@@ -1,13 +1,12 @@
 package src.UI;
 
 import javax.swing.*;
-import java.awt.*;
 
 public class Button {
     public JButton button;
-    public void createButtonWithIcon(JFrame dialogBox, String buttonText, ImageIcon icon) {
+    public void createButtonWithIcon(JFrame dialogBox, String buttonText, int boundX, int boundY, int boundWidth, int boundHeight, ImageIcon icon) {
         button = new JButton(buttonText, icon);
-        button.setBounds(90,150,240,30);
+        button.setBounds(boundX, boundY, boundWidth, boundHeight);
         dialogBox.add(button);
     }
 }

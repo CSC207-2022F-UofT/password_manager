@@ -1,4 +1,4 @@
-package src.useCases;
+package src.usecases;
 
 import src.entities.CustomPassword;
 

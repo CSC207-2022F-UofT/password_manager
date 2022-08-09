@@ -2,8 +2,8 @@ package src;
 
 //import src.usecases.ComputePasswordStrength;
 
+import src.controller.PasswordGeneratorUIController;
 import src.controller.StrengthCheckerUIControl;
-import src.controller.UIController;
 
 public class PasswordManagerApp {
     static void ComputePasswordStrength() {
@@ -11,8 +11,15 @@ public class PasswordManagerApp {
         uiController.createStrengthCheckerBox();
     }
 
+    static void GenerateNewPassword() {
+        PasswordGeneratorUIController PasswordGenerator = new PasswordGeneratorUIController();
+        PasswordGenerator.createPasswordGeneratorBox();
+    }
+
     public static void main(String[] args) {
         //Use-case 1: Password Strength Checker
         ComputePasswordStrength();
+        //Use-case 2: Password Generator
+        GenerateNewPassword();
     }
 }

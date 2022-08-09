@@ -9,7 +9,7 @@ public class GenerateNewPassword {
     // Generating Class Methods for the GenerateNewPassword Use Case
 
     // When all checkboxes are selected
-    public String lowUpSymNum(int len) {
+    public static String lowUpSymNum(int len) {
         String password = "";
         for (int i = 0; i < len; i++) {
             double d = (Math.random() * (5 - 1)) + 1;     // Random numbers between 1 and 4
@@ -21,7 +21,7 @@ public class GenerateNewPassword {
     }
 
     // Generating password with other Criteria:
-    private String getString(String password, int num, String choice) {
+    private static String getString(String password, int num, String choice) {
         switch (num) {
             case 1 -> choice = generateLCLetters(1);
             case 2 -> choice = generateUCLetters(1);
@@ -35,7 +35,7 @@ public class GenerateNewPassword {
     }
 
     // When only Two Choices are selected
-    public String twoChoices(String code,int len){
+    public static String twoChoices(String code, int len){
         String password = "";
         for(int i=0;i<len;i++){
             double binar = (Math.random()*(2))+0;     // Random number 1 or 2
@@ -66,7 +66,7 @@ public class GenerateNewPassword {
     }
 
     // When only Three Choices are selected
-    public String threeChoices(String code,int len){
+    public static String threeChoices(String code, int len){
         String password = "";
         for(int i=0;i<len;i++){
             double trio = (Math.random()*(3))+0;

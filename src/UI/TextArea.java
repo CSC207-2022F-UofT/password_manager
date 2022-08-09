@@ -12,7 +12,7 @@ public class TextArea {
     public void createTextArea(JFrame dialogBox, String textAreaText, Color foregroundColor, int x, int y, int width, int height) {
         textArea = new JTextArea(textAreaText);
         textArea.setBounds(x,y,width,height);
-        textArea.setForeground(Color.white);
+        textArea.setForeground(Color.BLACK);
         if (dialogBox != null) {
             dialogBox.add(textArea);
         }

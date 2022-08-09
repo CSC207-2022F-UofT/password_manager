@@ -48,7 +48,7 @@ public class PasswordGenerator {
     public static String generateSymbols(int len) {
         StringBuilder symbletters = new StringBuilder();
         for (int i = 1; i <= len; i++) {
-            double choice = (Math.random() * (5 - 1)) + 1;      // Random numbers between 1 to 4
+            double choice = (Math.random() * (5 - 1)) + 1;      // Random numbers between 1 and 4
             int choicenum = (int) choice;
             String symbolchoice = "";
             double d = 0;
@@ -57,7 +57,7 @@ public class PasswordGenerator {
                 case 2 -> d = (Math.random() * (64 - 58)) + 58;       // ASCII values between 58 to 64
                 case 3 -> d = (Math.random() * (95 - 91)) + 91;       // ASCII values between 91 to 95
                 case 4 -> d = (Math.random() * (126 - 123)) + 123;    // ASCII values between 123 to 126
-                default -> {
+                default -> { d = 45;
                 }
             }
             int num = (int) d;

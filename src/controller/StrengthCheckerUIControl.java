@@ -1,17 +1,16 @@
 package src.controller;
 
 import src.UI.Button;
-import src.UI.DialogBox;
-import src.UI.Icon;
 import src.UI.Label;
 import src.UI.TextField;
-import src.useCases.ComputePasswordStrength;
+import src.UI.*;
+import src.usecases.ComputePasswordStrength;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 
-public class StrengthCheckerUIControl extends UIController {
+public class StrengthCheckerUIControl extends PasswordGeneratorUIController {
     DialogBox dialogBox;
     Label inputLabel, resultLabel, suggestionLabel;
     TextField passwordTextField;
@@ -29,7 +28,7 @@ public class StrengthCheckerUIControl extends UIController {
         icon = new Icon();
         icon.createIcon("../resources/icons/password.png");
         checkPasswordButton = new Button();
-        checkPasswordButton.createButtonWithIcon(dialogBox.jframe, "How strong is your password?", icon.icon);
+        checkPasswordButton.createButtonWithIcon(dialogBox.jframe, "How strong is your password?", 130, 195, 100, 30, icon.icon);
         checkPasswordButton.button.addActionListener(this);
     }
 

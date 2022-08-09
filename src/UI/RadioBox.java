@@ -17,4 +17,8 @@ public class RadioBox {
             dialogBox.add(radioButton);
         }
     }
+
+    public boolean isSelected() {
+        return radioButton.isSelected();
+    }
 }
