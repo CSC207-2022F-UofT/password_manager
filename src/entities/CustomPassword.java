@@ -1,14 +1,16 @@
 package src.entities;
 
 public class CustomPassword extends Password {
-
-//    @Override
-//    public String getPassword() {
-//        UIController.getPassword();
-//    }
-
+    StrengthChecker strengthChecker = new StrengthChecker();
     public void checkStrength() {
-
+        strengthChecker.computeStrength(passwordValue);
     }
 
+    public Strength getStrength() {
+        return strengthChecker.strength;
+    }
+
+    public Suggestion getSuggestion() {
+        return strengthChecker.suggestion;
+    }
 }

@@ -5,16 +5,9 @@ import java.awt.*;
 
 public class Button {
     public JButton button;
-
-    public Button() {
-    }
-
-    public void createButton(JFrame dialogBox, String buttonText, Color foregroundColor, int x, int y, int width, int height) {
-        button = new JButton(buttonText);
-        button.setBounds(x,y,width,height);
-        button.setForeground(Color.white);
-        if (dialogBox != null) {
-            dialogBox.add(button);
-        }
+    public void createButtonWithIcon(JFrame dialogBox, String buttonText, ImageIcon icon) {
+        button = new JButton(buttonText, icon);
+        button.setBounds(90,150,240,30);
+        dialogBox.add(button);
     }
 }
