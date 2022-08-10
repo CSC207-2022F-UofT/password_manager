@@ -1,6 +1,6 @@
-package src.useCases;
+package useCases;
 
-import src.entities.CustomPassword;
+import entities.CustomPassword;
 
 import java.util.ArrayList;
 

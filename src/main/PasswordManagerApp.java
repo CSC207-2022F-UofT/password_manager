@@ -1,9 +1,6 @@
-package src;
-
 //import src.usecases.ComputePasswordStrength;
 
-import src.controller.StrengthCheckerUIControl;
-import src.controller.UIController;
+import controller.StrengthCheckerUIControl;
 
 public class PasswordManagerApp {
     static void ComputePasswordStrength() {

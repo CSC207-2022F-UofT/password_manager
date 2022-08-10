@@ -1,11 +1,11 @@
-package src.controller;
+package controller;
 
-import src.UI.Button;
-import src.UI.DialogBox;
-import src.UI.Icon;
-import src.UI.Label;
-import src.UI.TextField;
-import src.useCases.ComputePasswordStrength;
+import UI.Button;
+import UI.DialogBox;
+import UI.Icon;
+import UI.Label;
+import UI.TextField;
+import useCases.ComputePasswordStrength;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
