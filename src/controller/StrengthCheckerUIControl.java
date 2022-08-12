@@ -46,9 +46,7 @@ public class StrengthCheckerUIControl extends UIController {
         resultLabel.getLabel().setText(resultText);
     }
 
-    public void setSuggestion(ArrayList<String> suggestions) {
-        // Picking only the first suggestion
-        String suggestion = suggestions.get(0);
+    public void setSuggestion(String suggestion) {
         suggestionLabel = new Label();
         suggestionLabel.createLabel(130, 230, 150, 30, dialogBox.getJframe(), "", Color.red);
         suggestionLabel.getLabel().setText(suggestion);

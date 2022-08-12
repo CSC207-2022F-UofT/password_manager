@@ -11,7 +11,7 @@ public class StrengthChecker {
     public void computeStrength(String password) {
         Criteria criteria = new Criteria();
         suggestion = criteria.evaluatePassword(password);
-        if (suggestion.suggestions.size() == 0) {
+        if (suggestion.suggestion == null) {
             strength = Strength.STRONG;
         } else {
             strength = Strength.WEAK;
