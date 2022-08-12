@@ -1,17 +1,14 @@
 package src;
-
-//import src.usecases.ComputePasswordStrength;
-
-import src.controller.StrengthCheckerUIControl;
+import src.UI.StrengthCheckerBox;
 
 public class PasswordManagerApp {
     static void computePasswordStrength() {
-        StrengthCheckerUIControl uiController = new StrengthCheckerUIControl();
-        uiController.createStrengthCheckerBox();
+        StrengthCheckerBox strengthCheckerBox = new StrengthCheckerBox();
+        strengthCheckerBox.createStrengthCheckerBox();
     }
 
     public static void main(String[] args) {
-        //Use-case 1: Password Strength Checker
+        //Screen 1: Password Strength Checker
         computePasswordStrength();
     }
 }
