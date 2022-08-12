@@ -8,9 +8,9 @@ public class TextField {
     public TextField() {
     }
 
-    public void createTextField(JFrame dialogBox) {
+    public void createTextField(JFrame dialogBox, int boundX, int boundY, int boundWidth, int boundHeight) {
         textField = new JTextField();
-        textField.setBounds(100,100,200,30);
+        textField.setBounds(boundX,boundY,boundWidth,boundHeight);
         dialogBox.add(textField);
     }
 }

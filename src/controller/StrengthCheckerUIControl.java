@@ -25,11 +25,11 @@ public class StrengthCheckerUIControl extends UIController {
         inputLabel = new Label();
         inputLabel.createLabel(70, 60, 260, 30, dialogBox.jframe, "Enter your password to check its strength", Color.blue);
         passwordTextField = new TextField();
-        passwordTextField.createTextField(dialogBox.jframe);
+        passwordTextField.createTextField(dialogBox.jframe,100,100,200,30);
         icon = new Icon();
         icon.createIcon("../resources/icons/password.png");
         checkPasswordButton = new Button();
-        checkPasswordButton.createButtonWithIcon(dialogBox.jframe, "How strong is your password?", icon.icon);
+        checkPasswordButton.createButtonWithIcon(dialogBox.jframe, "How strong is your password?", icon.icon, 90,150,240,30);
         checkPasswordButton.button.addActionListener(this);
     }
 
