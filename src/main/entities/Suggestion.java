@@ -1,6 +1,4 @@
-package src.entities;
-
-import java.util.ArrayList;
+package entities;
 
 public class Suggestion {
     String suggestion;

@@ -1,8 +1,6 @@
-package src.useCases;
+package useCases;
 
-import src.entities.CustomPassword;
-
-import java.util.ArrayList;
+import entities.CustomPassword;
 
 public class ComputePasswordStrength {
     CustomPassword customPassword = new CustomPassword();

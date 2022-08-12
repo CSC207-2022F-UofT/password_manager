@@ -1,6 +1,6 @@
-package src.UI;
+package UI;
 
-import src.controller.StrengthCheckerUIControl;
+import controller.StrengthCheckerUIControl;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;

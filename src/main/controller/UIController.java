@@ -1,12 +1,5 @@
-package src.controller;
+package controller;
 
-import src.UI.Button;
-import src.UI.DialogBox;
-import src.UI.Icon;
-import src.UI.Label;
-import src.UI.TextField;
-
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 

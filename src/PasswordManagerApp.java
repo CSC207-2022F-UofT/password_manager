@@ -1,5 +1,5 @@
 package src;
-import src.UI.StrengthCheckerBox;
+import UI.StrengthCheckerBox;
 
 public class PasswordManagerApp {
     static void computePasswordStrength() {

@@ -1,5 +1,5 @@
-package src.controller;
-import src.useCases.ComputePasswordStrength;
+package controller;
+import useCases.ComputePasswordStrength;
 
 public class StrengthCheckerUIControl extends UIController {
     String result;

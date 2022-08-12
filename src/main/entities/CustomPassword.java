@@ -1,4 +1,4 @@
-package src.entities;
+package entities;
 
 public class CustomPassword extends Password {
     StrengthChecker strengthChecker = new StrengthChecker();
