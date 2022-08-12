@@ -1,6 +1,6 @@
-package src.entities;
+package entities;
 
-import src.UI.DialogBox;
+import UI.DialogBox;
 
 public class PasswordGenerator {
 

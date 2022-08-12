@@ -1,10 +1,14 @@
-package src.UI;
+package UI;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class Label {
-    public JLabel label;
+    JLabel label;
+
+    public JLabel getLabel() {
+        return label;
+    }
 
     /**
      * Creates a label and (optionally) adds it to an existing Dialog Box.

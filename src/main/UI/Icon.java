@@ -1,10 +1,14 @@
-package src.UI;
+package UI;
 
 import javax.swing.*;
-import java.awt.*;
 
 public class Icon {
-    public ImageIcon icon;
+    ImageIcon icon;
+
+    public ImageIcon getIcon() {
+        return icon;
+    }
+
     public void createIcon(String iconFilePath) {
         icon = new ImageIcon(this.getClass().getResource(iconFilePath));
         icon.getImage();
