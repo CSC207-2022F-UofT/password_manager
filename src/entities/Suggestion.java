@@ -3,7 +3,11 @@ package src.entities;
 import java.util.ArrayList;
 
 public class Suggestion {
-    public ArrayList<String> suggestions;
+    ArrayList<String> suggestions;
+
+    public ArrayList<String> getSuggestions() {
+        return suggestions;
+    }
 
     Suggestion() {
         suggestions = new ArrayList<>();

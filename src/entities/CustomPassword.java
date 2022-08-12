@@ -1,5 +1,7 @@
 package src.entities;
 
+import java.util.ArrayList;
+
 public class CustomPassword extends Password {
     StrengthChecker strengthChecker = new StrengthChecker();
     public void checkStrength() {
@@ -10,7 +12,7 @@ public class CustomPassword extends Password {
         return strengthChecker.strength;
     }
 
-    public Suggestion getSuggestion() {
-        return strengthChecker.suggestion;
+    public ArrayList<String> getSuggestion() {
+        return strengthChecker.suggestion.getSuggestions();
     }
 }

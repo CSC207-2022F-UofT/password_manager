@@ -9,7 +9,6 @@ public class ComputePasswordStrength {
     public void computeStrength(String customPasswordValue) {
         customPassword.setPassword(customPasswordValue);
         customPassword.checkStrength();
-        customPassword.getSuggestion();
     }
 
     public String getStrength() {
@@ -17,7 +16,7 @@ public class ComputePasswordStrength {
     }
 
     public ArrayList<String> getSuggestion() {
-        return customPassword.getSuggestion().suggestions;
+        return customPassword.getSuggestion();
     }
 
 }
