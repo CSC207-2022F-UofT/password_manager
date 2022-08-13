@@ -1,13 +1,6 @@
 package entities;
 
-import UI.DialogBox;
-
 public class PasswordGenerator {
-
-    PasswordGenerator() {
-        DialogBox systemDialog = new DialogBox();
-    }
-
 
     public static String generateLCLetters(int len) {
         StringBuilder lc = new StringBuilder();

@@ -1,14 +1,38 @@
-package src.usecases;
+package entities;
 
-import static src.entities.PasswordGenerator.generateLCLetters;
-import static src.entities.PasswordGenerator.generateUCLetters;
-import static src.entities.PasswordGenerator.generateNumbers;
-import static src.entities.PasswordGenerator.generateSymbols;
+public class NewPassword extends Password {
 
-public class GenerateNewPassword {
-    // Generating Class Methods for the GenerateNewPassword Use Case
+    private int passlen;
+    private String choices;
+
+    public void setPasslen(int passlen) {
+        this.passlen = passlen;
+    }
+
+    public void setChoices(String choices) {
+        this.choices = choices;
+    }
+
+    public void generatePassword() {
+        if (choices.length() == 4) {
+            setPassword(lowUpSymNum(passlen));
+        } else if (choices.length() == 3) {
+            setPassword(threeChoices(choices, passlen));
+        } else if (choices.length() == 2) {
+            setPassword(twoChoices(choices, passlen));
+        } else if (choices == "L") {
+            setPassword(PasswordGenerator.generateLCLetters(passlen));
+        } else if (choices == "U") {
+            setPassword(PasswordGenerator.generateUCLetters(passlen));
+        } else if (choices == "N") {
+            setPassword(PasswordGenerator.generateNumbers(passlen));
+        } else if (choices == "S") {
+            setPassword(PasswordGenerator.generateSymbols(passlen));
+        }
+    }
 
     // When all checkboxes are selected
+
     public static String lowUpSymNum(int len) {
         String password = "";
         for (int i = 0; i < len; i++) {
@@ -23,10 +47,10 @@ public class GenerateNewPassword {
     // Generating password with other Criteria:
     private static String getString(String password, int num, String choice) {
         switch (num) {
-            case 1 -> choice = generateLCLetters(1);
-            case 2 -> choice = generateUCLetters(1);
-            case 3 -> choice = generateSymbols(1);
-            case 4 -> choice = generateNumbers(1);
+            case 1 -> choice = PasswordGenerator.generateLCLetters(1);
+            case 2 -> choice = PasswordGenerator.generateUCLetters(1);
+            case 3 -> choice = PasswordGenerator.generateSymbols(1);
+            case 4 -> choice = PasswordGenerator.generateNumbers(1);
             default -> {
             }
         }
