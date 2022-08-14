@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>UI.Icon</OriginalElement>
+  <nodes>
+    <node x="1527.9999999999998" y="945.0">UI.DialogBox</node>
+    <node x="2801.0" y="912.0">controller.StrengthCheckerUIControl</node>
+    <node x="2497.0" y="956.0">UI.TextField</node>
+    <node x="2429.458333333333" y="242.0">entities.Password</node>
+    <node x="1170.9999999999998" y="956.0">UI.Label</node>
+    <node x="-189.0" y="956.0">UI.ComboBox</node>
+    <node x="1717.4532520325204" y="1392.0">UI.StrengthCheckerBox</node>
+    <node x="978.9999999999998" y="956.0">UI.Icon</node>
+    <node x="2812.0" y="469.0">entities.CustomPassword</node>
+    <node x="2824.5" y="242.0">entities.StrengthChecker</node>
+    <node x="1387.5247252747251" y="1480.5">entities.PasswordGenerator</node>
+    <node x="2189.0" y="945.0">controller.PasswordGeneratorUIControl</node>
+    <node x="2661.32825203252" y="46.0">entities.Strength</node>
+    <node x="2507.5" y="751.5">controller.UIController</node>
+    <node x="2882.25" y="-128.0">entities.Suggestion</node>
+    <node x="1439.0782520325204" y="1762.0">src.PasswordManagerApp</node>
+    <node x="2809.0" y="718.0">useCases.ComputePasswordStrength</node>
+    <node x="1793.9999999999998" y="956.0">UI.Button</node>
+    <node x="2199.0" y="729.0">useCases.GenerateNewPassword</node>
+    <node x="2212.0" y="414.0">entities.NewPassword</node>
+    <node x="2858.32825203252" y="79.5">entities.Criteria</node>
+    <node x="583.9999999999998" y="945.0">UI.RadioBox</node>
+    <node x="948.5782520325204" y="1392.0">UI.PasswordGeneratorBox</node>
+    <node x="207.99999999999977" y="967.0">UI.TextArea</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="UI.PasswordGeneratorBox" target="UI.Label" relationship="TO_ONE">
+      <point x="-60.25" y="-160.0" />
+      <point x="1008.8282520325204" y="1372.0" />
+      <point x="120.3191056910573" y="1372.0" />
+      <point x="120.3191056910573" y="1282.0" />
+      <point x="663.5782520325204" y="1282.0" />
+      <point x="663.5782520325204" y="1202.0" />
+      <point x="1255.2499999999998" y="1202.0" />
+      <point x="-84.25" y="61.0" />
+    </edge>
+    <edge source="useCases.ComputePasswordStrength" target="entities.CustomPassword" relationship="CREATE">
+      <point x="-57.5" y="-72.0" />
+      <point x="2866.5" y="693.0" />
+      <point x="2868.0" y="693.0" />
+      <point x="-56.0" y="72.0" />
+    </edge>
+    <edge source="UI.PasswordGeneratorBox" target="UI.ComboBox" relationship="CREATE">
+      <point x="60.25" y="-160.0" />
+      <point x="1129.3282520325204" y="1352.0" />
+      <point x="1986.5" y="1352.0" />
+      <point x="1986.5" y="1232.0" />
+      <point x="93.75" y="1232.0" />
+      <point x="94.25" y="61.0" />
+    </edge>
+    <edge source="UI.PasswordGeneratorBox" target="UI.Button" relationship="CREATE">
+      <point x="60.25" y="-160.0" />
+      <point x="1129.3282520325204" y="1352.0" />
+      <point x="1986.5" y="1352.0" />
+      <point x="1986.5" y="1312.0" />
+      <point x="2350.7032520325206" y="1312.0" />
+      <point x="2350.7032520325206" y="1142.0" />
+      <point x="2075.25" y="1142.0" />
+      <point x="93.75" y="61.0" />
+    </edge>
+    <edge source="UI.StrengthCheckerBox" target="UI.Button" relationship="CREATE">
+      <point x="59.5" y="-160.0" />
+      <point x="1895.9532520325201" y="1342.0" />
+      <point x="2550.509146341463" y="1342.0" />
+      <point x="2550.509146341463" y="1182.0" />
+      <point x="2350.7032520325206" y="1182.0" />
+      <point x="2350.7032520325206" y="1142.0" />
+      <point x="2075.25" y="1142.0" />
+      <point x="93.75" y="61.0" />
+    </edge>
+    <edge source="src.PasswordManagerApp" target="UI.StrengthCheckerBox" relationship="CREATE">
+      <point x="0.0" y="-60.5" />
+      <point x="1553.0782520325204" y="1737.0" />
+      <point x="1836.4532520325204" y="1737.0" />
+      <point x="0.0" y="160.0" />
+    </edge>
+    <edge source="entities.StrengthChecker" target="entities.Criteria" relationship="CREATE">
+      <point x="52.25" y="-61.0" />
+      <point x="2981.25" y="221.0" />
+      <point x="3045.5" y="221.0" />
+      <point x="3045.5" y="211.0" />
+      <point x="2982.32825203252" y="211.0" />
+      <point x="0.0" y="38.5" />
+    </edge>
+    <edge source="UI.StrengthCheckerBox" target="UI.Icon" relationship="CREATE">
+      <point x="59.5" y="-160.0" />
+      <point x="1895.9532520325201" y="1342.0" />
+      <point x="2550.509146341463" y="1342.0" />
+      <point x="2550.509146341463" y="1212.0" />
+      <point x="1852.0782520325204" y="1212.0" />
+      <point x="1852.0782520325204" y="1172.0" />
+      <point x="1107.9999999999998" y="1172.0" />
+      <point x="43.0" y="61.0" />
+    </edge>
+    <edge source="UI.StrengthCheckerBox" target="controller.StrengthCheckerUIControl" relationship="CREATE">
+      <point x="59.5" y="-160.0" />
+      <point x="1895.9532520325201" y="1342.0" />
+      <point x="2550.509146341463" y="1342.0" />
+      <point x="2550.509146341463" y="1332.0" />
+      <point x="2919.0" y="1332.0" />
+      <point x="0.0" y="105.0" />
+    </edge>
+    <edge source="entities.NewPassword" target="entities.Password" relationship="GENERALIZATION">
+      <point x="0.0" y="-127.0" />
+      <point x="2328.0" y="389.0" />
+      <point x="2520.458333333333" y="389.0" />
+      <point x="0.0" y="61.0" />
+    </edge>
+    <edge source="UI.StrengthCheckerBox" target="UI.Label" relationship="TO_ONE">
+      <point x="-59.5" y="-160.0" />
+      <point x="1776.9532520325204" y="1362.0" />
+      <point x="938.6249999999998" y="1362.0" />
+      <point x="938.6249999999998" y="1252.0" />
+      <point x="663.5782520325204" y="1252.0" />
+      <point x="663.5782520325204" y="1202.0" />
+      <point x="1255.2499999999998" y="1202.0" />
+      <point x="-84.25" y="61.0" />
+    </edge>
+    <edge source="UI.PasswordGeneratorBox" target="UI.TextArea" relationship="TO_ONE">
+      <point x="-60.25" y="-160.0" />
+      <point x="1008.8282520325204" y="1372.0" />
+      <point x="120.3191056910573" y="1372.0" />
+      <point x="120.3191056910573" y="1222.0" />
+      <point x="296.9999999999998" y="1222.0" />
+      <point x="-89.0" y="50.0" />
+    </edge>
+    <edge source="src.PasswordManagerApp" target="UI.PasswordGeneratorBox" relationship="CREATE">
+      <point x="0.0" y="-60.5" />
+      <point x="1553.0782520325204" y="1737.0" />
+      <point x="1069.0782520325204" y="1737.0" />
+      <point x="0.0" y="160.0" />
+    </edge>
+    <edge source="UI.PasswordGeneratorBox" target="UI.DialogBox" relationship="CREATE">
+      <point x="60.25" y="-160.0" />
+      <point x="1129.3282520325204" y="1352.0" />
+      <point x="1986.5" y="1352.0" />
+      <point x="1986.5" y="1302.0" />
+      <point x="2164.3282520325206" y="1302.0" />
+      <point x="2164.3282520325206" y="1152.0" />
+      <point x="1712.4999999999998" y="1152.0" />
+      <point x="61.5" y="72.0" />
+    </edge>
+    <edge source="entities.StrengthChecker" target="entities.Suggestion" relationship="CREATE">
+      <point x="52.25" y="-61.0" />
+      <point x="2981.25" y="221.0" />
+      <point x="3045.5" y="221.0" />
+      <point x="3045.5" y="211.0" />
+      <point x="3116.82825203252" y="211.0" />
+      <point x="3116.82825203252" y="25.0" />
+      <point x="3045.5" y="25.0" />
+      <point x="3045.5" y="15.0" />
+      <point x="3026.25" y="15.0" />
+      <point x="48.0" y="61.0" />
+    </edge>
+    <edge source="UI.PasswordGeneratorBox" target="UI.TextArea" relationship="CREATE">
+      <point x="60.25" y="-160.0" />
+      <point x="1129.3282520325204" y="1352.0" />
+      <point x="1986.5" y="1352.0" />
+      <point x="1986.5" y="1232.0" />
+      <point x="474.9999999999998" y="1232.0" />
+      <point x="89.0" y="50.0" />
+    </edge>
+    <edge source="UI.StrengthCheckerBox" target="UI.TextField" relationship="CREATE">
+      <point x="59.5" y="-160.0" />
+      <point x="1895.9532520325201" y="1342.0" />
+      <point x="2550.509146341463" y="1342.0" />
+      <point x="2550.509146341463" y="1332.0" />
+      <point x="2710.0" y="1332.0" />
+      <point x="71.0" y="61.0" />
+    </edge>
+    <edge source="controller.StrengthCheckerUIControl" target="useCases.ComputePasswordStrength" relationship="CREATE">
+      <point x="59.0" y="-105.0" />
+      <point x="2978.0" y="887.0" />
+      <point x="2924.0" y="887.0" />
+      <point x="0.0" y="72.0" />
+    </edge>
+    <edge source="UI.PasswordGeneratorBox" target="UI.RadioBox" relationship="CREATE">
+      <point x="60.25" y="-160.0" />
+      <point x="1129.3282520325204" y="1352.0" />
+      <point x="1986.5" y="1352.0" />
+      <point x="1986.5" y="1232.0" />
+      <point x="865.2499999999998" y="1232.0" />
+      <point x="93.75" y="72.0" />
+    </edge>
+    <edge source="entities.Criteria" target="entities.Suggestion" relationship="CREATE">
+      <point x="0.0" y="-38.5" />
+      <point x="2982.32825203252" y="25.0" />
+      <point x="3045.5" y="25.0" />
+      <point x="3045.5" y="15.0" />
+      <point x="3026.25" y="15.0" />
+      <point x="48.0" y="61.0" />
+    </edge>
+    <edge source="entities.CustomPassword" target="entities.Password" relationship="GENERALIZATION">
+      <point x="-74.66666666666669" y="-72.0" />
+      <point x="2849.333333333333" y="389.0" />
+      <point x="2520.458333333333" y="389.0" />
+      <point x="0.0" y="61.0" />
+    </edge>
+    <edge source="entities.StrengthChecker" target="entities.Strength" relationship="TO_ONE">
+      <point x="-52.25" y="-61.0" />
+      <point x="2876.75" y="221.0" />
+      <point x="2794.5" y="221.0" />
+      <point x="2794.5" y="211.0" />
+      <point x="2749.32825203252" y="211.0" />
+      <point x="0.0" y="72.0" />
+    </edge>
+    <edge source="controller.StrengthCheckerUIControl" target="controller.UIController" relationship="GENERALIZATION">
+      <point x="-59.0" y="-105.0" />
+      <point x="2860.0" y="887.0" />
+      <point x="2626.5" y="887.0" />
+      <point x="0.0" y="38.5" />
+    </edge>
+    <edge source="UI.StrengthCheckerBox" target="UI.Label" relationship="CREATE">
+      <point x="59.5" y="-160.0" />
+      <point x="1895.9532520325201" y="1342.0" />
+      <point x="2550.509146341463" y="1342.0" />
+      <point x="2550.509146341463" y="1202.0" />
+      <point x="2014.9532520325206" y="1202.0" />
+      <point x="2014.9532520325206" y="1162.0" />
+      <point x="1423.7499999999998" y="1162.0" />
+      <point x="84.25" y="61.0" />
+    </edge>
+    <edge source="UI.PasswordGeneratorBox" target="UI.Label" relationship="CREATE">
+      <point x="60.25" y="-160.0" />
+      <point x="1129.3282520325204" y="1352.0" />
+      <point x="1986.5" y="1352.0" />
+      <point x="1986.5" y="1292.0" />
+      <point x="2014.9532520325206" y="1292.0" />
+      <point x="2014.9532520325206" y="1162.0" />
+      <point x="1423.7499999999998" y="1162.0" />
+      <point x="84.25" y="61.0" />
+    </edge>
+    <edge source="controller.PasswordGeneratorUIControl" target="useCases.GenerateNewPassword" relationship="CREATE">
+      <point x="-72.0" y="-72.0" />
+      <point x="2261.0" y="887.0" />
+      <point x="2328.0" y="887.0" />
+      <point x="0.0" y="61.0" />
+    </edge>
+    <edge source="UI.StrengthCheckerBox" target="UI.DialogBox" relationship="CREATE">
+      <point x="59.5" y="-160.0" />
+      <point x="1895.9532520325201" y="1342.0" />
+      <point x="2550.509146341463" y="1342.0" />
+      <point x="2550.509146341463" y="1192.0" />
+      <point x="2164.3282520325206" y="1192.0" />
+      <point x="2164.3282520325206" y="1152.0" />
+      <point x="1712.4999999999998" y="1152.0" />
+      <point x="61.5" y="72.0" />
+    </edge>
+    <edge source="UI.StrengthCheckerBox" target="UI.Icon" relationship="TO_ONE">
+      <point x="-59.5" y="-160.0" />
+      <point x="1776.9532520325204" y="1362.0" />
+      <point x="938.6249999999998" y="1362.0" />
+      <point x="938.6249999999998" y="1262.0" />
+      <point x="541.9532520325204" y="1262.0" />
+      <point x="541.9532520325204" y="1212.0" />
+      <point x="1021.9999999999998" y="1212.0" />
+      <point x="-43.0" y="61.0" />
+    </edge>
+    <edge source="useCases.GenerateNewPassword" target="entities.NewPassword" relationship="CREATE">
+      <point x="64.5" y="-61.0" />
+      <point x="2392.5" y="693.0" />
+      <point x="2386.0" y="693.0" />
+      <point x="58.0" y="127.0" />
+    </edge>
+    <edge source="useCases.ComputePasswordStrength" target="entities.CustomPassword" relationship="TO_ONE">
+      <point x="57.5" y="-72.0" />
+      <point x="2981.5" y="693.0" />
+      <point x="2980.0" y="693.0" />
+      <point x="56.0" y="72.0" />
+    </edge>
+    <edge source="UI.StrengthCheckerBox" target="UI.Button" relationship="TO_ONE">
+      <point x="-59.5" y="-160.0" />
+      <point x="1776.9532520325204" y="1362.0" />
+      <point x="938.6249999999998" y="1362.0" />
+      <point x="938.6249999999998" y="1312.0" />
+      <point x="989.8282520325204" y="1312.0" />
+      <point x="989.8282520325204" y="1182.0" />
+      <point x="1887.75" y="1182.0" />
+      <point x="-93.75" y="61.0" />
+    </edge>
+    <edge source="UI.PasswordGeneratorBox" target="UI.Button" relationship="TO_ONE">
+      <point x="-60.25" y="-160.0" />
+      <point x="1008.8282520325204" y="1372.0" />
+      <point x="120.3191056910573" y="1372.0" />
+      <point x="120.3191056910573" y="1302.0" />
+      <point x="989.8282520325204" y="1302.0" />
+      <point x="989.8282520325204" y="1182.0" />
+      <point x="1887.75" y="1182.0" />
+      <point x="-93.75" y="61.0" />
+    </edge>
+    <edge source="UI.PasswordGeneratorBox" target="UI.ComboBox" relationship="TO_ONE">
+      <point x="-60.25" y="-160.0" />
+      <point x="1008.8282520325204" y="1372.0" />
+      <point x="120.3191056910573" y="1372.0" />
+      <point x="120.3191056910573" y="1222.0" />
+      <point x="-94.75" y="1222.0" />
+      <point x="-94.25" y="61.0" />
+    </edge>
+    <edge source="entities.CustomPassword" target="entities.StrengthChecker" relationship="CREATE">
+      <point x="74.66666666666667" y="-72.0" />
+      <point x="2998.6666666666665" y="389.0" />
+      <point x="2981.25" y="389.0" />
+      <point x="52.25" y="61.0" />
+    </edge>
+    <edge source="UI.PasswordGeneratorBox" target="UI.Icon" relationship="CREATE">
+      <point x="60.25" y="-160.0" />
+      <point x="1129.3282520325204" y="1352.0" />
+      <point x="1986.5" y="1352.0" />
+      <point x="1986.5" y="1222.0" />
+      <point x="1852.0782520325204" y="1222.0" />
+      <point x="1852.0782520325204" y="1172.0" />
+      <point x="1107.9999999999998" y="1172.0" />
+      <point x="43.0" y="61.0" />
+    </edge>
+    <edge source="UI.PasswordGeneratorBox" target="UI.Icon" relationship="TO_ONE">
+      <point x="-60.25" y="-160.0" />
+      <point x="1008.8282520325204" y="1372.0" />
+      <point x="120.3191056910573" y="1372.0" />
+      <point x="120.3191056910573" y="1272.0" />
+      <point x="541.9532520325204" y="1272.0" />
+      <point x="541.9532520325204" y="1212.0" />
+      <point x="1021.9999999999998" y="1212.0" />
+      <point x="-43.0" y="61.0" />
+    </edge>
+    <edge source="entities.CustomPassword" target="entities.StrengthChecker" relationship="TO_ONE">
+      <point x="-1.4210854715202004E-14" y="-72.0" />
+      <point x="2924.0" y="389.0" />
+      <point x="2876.75" y="389.0" />
+      <point x="-52.25" y="61.0" />
+    </edge>
+    <edge source="UI.PasswordGeneratorBox" target="UI.RadioBox" relationship="TO_ONE">
+      <point x="-60.25" y="-160.0" />
+      <point x="1008.8282520325204" y="1372.0" />
+      <point x="120.3191056910573" y="1372.0" />
+      <point x="120.3191056910573" y="1222.0" />
+      <point x="677.7499999999998" y="1222.0" />
+      <point x="-93.75" y="72.0" />
+    </edge>
+    <edge source="controller.PasswordGeneratorUIControl" target="controller.UIController" relationship="GENERALIZATION">
+      <point x="72.0" y="-72.0" />
+      <point x="2405.0" y="887.0" />
+      <point x="2626.5" y="887.0" />
+      <point x="0.0" y="38.5" />
+    </edge>
+    <edge source="useCases.GenerateNewPassword" target="entities.NewPassword" relationship="TO_ONE">
+      <point x="-64.5" y="-61.0" />
+      <point x="2263.5" y="693.0" />
+      <point x="2270.0" y="693.0" />
+      <point x="-58.0" y="127.0" />
+    </edge>
+    <edge source="UI.StrengthCheckerBox" target="UI.TextField" relationship="TO_ONE">
+      <point x="-59.5" y="-160.0" />
+      <point x="1776.9532520325204" y="1362.0" />
+      <point x="938.6249999999998" y="1362.0" />
+      <point x="938.6249999999998" y="1322.0" />
+      <point x="2568.0" y="1322.0" />
+      <point x="-71.0" y="61.0" />
+    </edge>
+    <edge source="UI.PasswordGeneratorBox" target="UI.DialogBox" relationship="TO_ONE">
+      <point x="-60.25" y="-160.0" />
+      <point x="1008.8282520325204" y="1372.0" />
+      <point x="120.3191056910573" y="1372.0" />
+      <point x="120.3191056910573" y="1292.0" />
+      <point x="835.7032520325204" y="1292.0" />
+      <point x="835.7032520325204" y="1192.0" />
+      <point x="1589.4999999999998" y="1192.0" />
+      <point x="-61.5" y="72.0" />
+    </edge>
+    <edge source="UI.StrengthCheckerBox" target="UI.DialogBox" relationship="TO_ONE">
+      <point x="-59.5" y="-160.0" />
+      <point x="1776.9532520325204" y="1362.0" />
+      <point x="938.6249999999998" y="1362.0" />
+      <point x="938.6249999999998" y="1242.0" />
+      <point x="835.7032520325204" y="1242.0" />
+      <point x="835.7032520325204" y="1192.0" />
+      <point x="1589.4999999999998" y="1192.0" />
+      <point x="-61.5" y="72.0" />
+    </edge>
+    <edge source="entities.StrengthChecker" target="entities.Suggestion" relationship="TO_ONE">
+      <point x="-52.25" y="-61.0" />
+      <point x="2876.75" y="221.0" />
+      <point x="2794.5" y="221.0" />
+      <point x="2794.5" y="211.0" />
+      <point x="2847.82825203252" y="211.0" />
+      <point x="2847.82825203252" y="25.0" />
+      <point x="2930.25" y="25.0" />
+      <point x="-48.0" y="61.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.3621890547263682" showDependencies="true" x="1777.3228365384616" y="888.6936813186812" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

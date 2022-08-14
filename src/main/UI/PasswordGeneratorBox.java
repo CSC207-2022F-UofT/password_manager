@@ -52,7 +52,7 @@ public class PasswordGeneratorBox implements ActionListener {
         ucbox.radioButton.setBackground(c);
         //Creating radiobox for numbox
         numbox = new RadioBox();
-        numbox.createRadioButton(dialogBox.jframe, "numbox", Color.white,110,130,150,30);
+        numbox.createRadioButton(dialogBox.jframe, "Numbers", Color.white,110,130,150,30);
         numbox.radioButton.setForeground(Color.black);
         numbox.radioButton.setBackground(c);
         //Creating radiobox for Special characters
