@@ -15,9 +15,17 @@ class SuggestionTest {
     }
 
     @Test
-    @DisplayName("Suggestion - should be empty by default")
+    @DisplayName("Suggestion - should be null by default")
     public void testSuggestionDefaultSize() {
-        assertEquals(suggestion.suggestions.size(), 0);
+        assertEquals(suggestion.getSuggestion(), null);
+    }
+
+    @Test
+    @DisplayName("Suggestion - check get and set methods")
+    public void testGetAndSetSuggestion() {
+        String suggestionText = "Test Suggestion";
+        suggestion.setSuggestion(suggestionText);
+        assertEquals(suggestion.getSuggestion(), suggestionText);
     }
 
 }

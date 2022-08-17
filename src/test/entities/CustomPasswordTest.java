@@ -23,4 +23,23 @@ public class CustomPasswordTest {
         assertEquals(customPassword.getPassword(), testPasswordValue);
     }
 
+    @Test
+    @DisplayName("Custom Password - Test default Strength and Suggestion")
+    public void testDefaultStrengthAndSuggestion() {
+        Strength strength = customPassword.getStrength();
+        String suggestion = customPassword.getSuggestion();
+        assertEquals(strength, null);
+        assertEquals(suggestion, null);
+    }
+
+    @Test
+    @DisplayName("Custom Password - Test Compute Strength Method")
+    public void testComputeStrength() {
+        String strongPasswordText = "Abcd@1234";
+        customPassword.setPassword(strongPasswordText);
+        customPassword.checkStrength();
+        assertEquals(customPassword.getStrength(), Strength.STRONG);
+        assertEquals(customPassword.getSuggestion(), null);
+    }
+
 }
