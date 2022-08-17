@@ -14,27 +14,27 @@ public class Criteria {
 
         // Check if password contains empty spaces
         if (password.matches("(\\s)*")) {
-            suggestion.addSuggestion("EMPTY SPACES");
+            suggestion.setSuggestion("EMPTY SPACES");
         }
         // Check if password has whitespaces
         else if (password.matches("(.)*(\\s)+(.)*")) {
-            suggestion.addSuggestion("Whitespace not allowed");
+            suggestion.setSuggestion("Whitespace not allowed");
         }
         // Check if password is greater than 8 chars
         else if (password.length() < 8) {
-            suggestion.addSuggestion("Add more characters");
+            suggestion.setSuggestion("Add more characters");
         }
         // Check if password is lesser than 30 chars
         else if (password.length() > 30) {
-            suggestion.addSuggestion("Password too long, max char is 30");
+            suggestion.setSuggestion("Password too long, max char is 30");
         }
         // Check if password has numbers
         else if (!password.matches("(.)*(\\d)(.)*")) {
-            suggestion.addSuggestion("Add any digit");
+            suggestion.setSuggestion("Add any digit");
         }
         // Check if password has symbols
         else if (!password.matches("(.)*[\\*\\!\\@\\#\\$\\%\\^\\&\\_\\-\\+\\=\\.\\'\\~\\,\\(\\)\\:\\;\\<\\>\\[\\]\\|\\}\\{\\/]+(.)*")) {
-            suggestion.addSuggestion("Add a symbol");
+            suggestion.setSuggestion("Add a symbol");
         }
         return suggestion;
     }

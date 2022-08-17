@@ -10,7 +10,7 @@ public class CustomPassword extends Password {
         return strengthChecker.strength;
     }
 
-    public Suggestion getSuggestion() {
-        return strengthChecker.suggestion;
+    public String getSuggestion() {
+        return strengthChecker.suggestion.getSuggestion();
     }
 }

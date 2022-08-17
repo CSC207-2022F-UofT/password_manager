@@ -6,9 +6,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class DialogBox implements ActionListener {
-    public JFrame jframe;
+    JFrame jframe;
 
     public DialogBox() {
+    }
+
+    public JFrame getJframe() {
+        return jframe;
     }
 
     public void createDialogBox(String boxTitle, int width, int height) {

@@ -3,10 +3,16 @@ package UI;
 import javax.swing.*;
 
 public class Button {
-    public JButton button;
-    public void createButtonWithIcon(JFrame dialogBox, String buttonText, ImageIcon icon) {
+    JButton button;
+
+    public JButton getButton() {
+        return button;
+    }
+
+    public void createButtonWithIcon(JFrame dialogBox, String buttonText, ImageIcon icon, int boundX,
+                                     int boundY, int boundWidth, int boundHeight) {
         button = new JButton(buttonText, icon);
-        button.setBounds(90,150,240,30);
+        button.setBounds(boundX,boundY,boundWidth,boundHeight);
         dialogBox.add(button);
     }
 }

@@ -3,14 +3,13 @@ package entities;
 import java.util.ArrayList;
 
 public class Suggestion {
-    public ArrayList<String> suggestions;
+    String suggestion;
 
-    Suggestion() {
-        suggestions = new ArrayList<>();
+    public String getSuggestion() {
+        return suggestion;
     }
 
-    public void addSuggestion(String suggestion) {
-        suggestions.add(suggestion);
+    public void setSuggestion(String suggestion) {
+        this.suggestion = suggestion;
     }
-
 }

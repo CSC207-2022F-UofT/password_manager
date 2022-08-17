@@ -23,14 +23,14 @@ public class StrengthCheckerUIControl extends UIController {
         dialogBox = new DialogBox();
         dialogBox.createDialogBox("Strength Checker", 400, 360);
         inputLabel = new Label();
-        inputLabel.createLabel(70, 60, 260, 30, dialogBox.jframe, "Enter your password to check its strength", Color.blue);
+        inputLabel.createLabel(70, 60, 260, 30, dialogBox.getJframe(), "Enter your password to check its strength", Color.blue);
         passwordTextField = new TextField();
-        passwordTextField.createTextField(dialogBox.jframe);
+        passwordTextField.createTextField(dialogBox.getJframe(),100,100,200,30);
         icon = new Icon();
         icon.createIcon("../resources/icons/password.png");
         checkPasswordButton = new Button();
-        checkPasswordButton.createButtonWithIcon(dialogBox.jframe, "How strong is your password?", icon.icon);
-        checkPasswordButton.button.addActionListener(this);
+        checkPasswordButton.createButtonWithIcon(dialogBox.getJframe(), "How strong is your password?", icon.getIcon(), 90,150,240,30);
+        checkPasswordButton.getButton().addActionListener(this);
     }
 
     public void invokeStrengthCheckerUseCase() {
@@ -42,21 +42,19 @@ public class StrengthCheckerUIControl extends UIController {
 
     public void setResult(String resultText) {
         resultLabel = new Label();
-        resultLabel.createLabel(170, 200, 150, 30, dialogBox.jframe, "", Color.red);
-        resultLabel.label.setText(resultText);
+        resultLabel.createLabel(170, 200, 150, 30, dialogBox.getJframe(), "", Color.red);
+        resultLabel.getLabel().setText(resultText);
     }
 
-    public void setSuggestion(ArrayList<String> suggestions) {
-        // Picking only the first suggestion
-        String suggestion = suggestions.get(0);
+    public void setSuggestion(String suggestion) {
         suggestionLabel = new Label();
-        suggestionLabel.createLabel(130, 230, 150, 30, dialogBox.jframe, "", Color.red);
-        suggestionLabel.label.setText(suggestion);
+        suggestionLabel.createLabel(130, 230, 150, 30, dialogBox.getJframe(), "", Color.red);
+        suggestionLabel.getLabel().setText(suggestion);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        customPasswordValue = passwordTextField.textField.getText();
+        customPasswordValue = passwordTextField.getTextField().getText();
         invokeStrengthCheckerUseCase();
     }
 }
