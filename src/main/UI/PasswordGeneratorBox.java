@@ -11,7 +11,7 @@ import java.util.Objects;
 public class PasswordGeneratorBox implements ActionListener {
     DialogBox dialogBox;
     ComboBox comboBox;
-    TextArea textArea;
+    UI.textArea textArea;
     Button button;
     Label label;
     RadioBox lcbox, ucbox, numbox, spcbox;
@@ -66,13 +66,13 @@ public class PasswordGeneratorBox implements ActionListener {
         icon.createIcon("../resources/icons/password.png");
 
         button = new Button();
-        button.createButtonWithIcon(dialogBox.jframe, "Generate Password",icon.icon,130,195,100,30 );
+        button.createButtonWithIcon(dialogBox.getJframe(), "Generate Password",icon.icon,130,195,100,30 );
         button.button.addActionListener(this);
         button.button.setForeground(Color.blue);
         button.button.setBackground(Color.white);
 
         //Creating a text Area to display the generated password
-        textArea = new TextArea();
+        textArea = new textArea();
         textArea.createTextArea(dialogBox.jframe, "", Color.blue,40,240,310,35);
         textArea.TextArea.setEditable(false);
         textArea.TextArea.setAlignmentX(SwingConstants.CENTER);
@@ -82,53 +82,26 @@ public class PasswordGeneratorBox implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         int passwordlen = Integer.parseInt(Objects.requireNonNull(comboBox.comboBox.getSelectedItem()).toString());
         String choices = "";
-        if(spcbox.isSelected() && !lcbox.isSelected() && !ucbox.isSelected() && !numbox.isSelected()){
-            choices = "S";
+        //concatinating the choices based on the checkboxes selected
+        if(lcbox.isSelected()){
+            choices += "L";
         }
-        else if(lcbox.isSelected() && !ucbox.isSelected() && !numbox.isSelected() && !spcbox.isSelected()){
-            choices = "L";
+        if(ucbox.isSelected()){
+            choices += "U";
         }
-        else if(ucbox.isSelected() && !lcbox.isSelected() && !numbox.isSelected() && !spcbox.isSelected()){
-            choices = "U";
+        if(numbox.isSelected()){
+            choices += "N";
         }
-        else if(numbox.isSelected() && !lcbox.isSelected() && !ucbox.isSelected() && !spcbox.isSelected()){
-            choices = "N";
+        if(spcbox.isSelected()){
+            choices += "S";
         }
-        else if(lcbox.isSelected() && ucbox.isSelected() && numbox.isSelected() && spcbox.isSelected()){
-            choices = "LUNS";
+        if(choices.equals("")){
+            JOptionPane.showMessageDialog(dialogBox.jframe, "Please select atleast one option");
         }
-        else if(lcbox.isSelected() && ucbox.isSelected() && !numbox.isSelected() && !spcbox.isSelected()){
-            choices = "LU";
-        }
-        else if(lcbox.isSelected() && !ucbox.isSelected() && !numbox.isSelected() && spcbox.isSelected()){
-            choices = "LS";
-        }
-        else if(lcbox.isSelected() && !ucbox.isSelected() && numbox.isSelected() && !spcbox.isSelected()){
-            choices = "LN";
-        }
-        else if(!lcbox.isSelected() && ucbox.isSelected() && numbox.isSelected() && !spcbox.isSelected()){
-            choices = "UN";
-        }
-        else if(!lcbox.isSelected() && ucbox.isSelected() && !numbox.isSelected() && spcbox.isSelected()){
-            choices = "SU";
-        }
-        else if(!lcbox.isSelected() && !ucbox.isSelected() && numbox.isSelected() && spcbox.isSelected()){
-            choices = "NS";
-        }
-        else if(lcbox.isSelected() && ucbox.isSelected() && numbox.isSelected() && !spcbox.isSelected()){
-            choices = "LUN";
-        }
-        else if(lcbox.isSelected() && ucbox.isSelected() && !numbox.isSelected() && spcbox.isSelected()){
-            choices = "LUS";
-        }
-        else if(lcbox.isSelected() && !ucbox.isSelected() && numbox.isSelected() && spcbox.isSelected()){
-            choices = "LNS";
-        }
-        else if(!lcbox.isSelected() && ucbox.isSelected() && numbox.isSelected() && spcbox.isSelected()){
-            choices = "UNS";
-        }
-        PasswordGeneratorUIControl.performPasswordGeneration(passwordlen, choices);
+
+        PasswordGeneratorUIControl passwordGeneratorUIControl = new PasswordGeneratorUIControl();
+        passwordGeneratorUIControl.performPasswordGeneration(passwordlen, choices);
         textArea.TextArea.setFont(new Font("Serif",Font.PLAIN,20));
-        textArea.TextArea.setText(PasswordGeneratorUIControl.getResult());
+        textArea.TextArea.setText(passwordGeneratorUIControl.getResult());
     }
 }

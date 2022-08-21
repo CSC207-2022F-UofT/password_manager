@@ -2,11 +2,14 @@ package entities;
 
 public class NewPassword extends Password {
 
-    private int passlen;
+    private int passwordLength;
     private String choices;
 
-    public void setPasslen(int passlen) {
-        this.passlen = passlen;
+    private PasswordGenerator passwordGenerator = new PasswordGenerator();
+
+
+    public void setPasswordLength(int passwordLength) {
+        this.passwordLength = passwordLength;
     }
 
     public void setChoices(String choices) {
@@ -14,26 +17,26 @@ public class NewPassword extends Password {
     }
 
     public void generatePassword() {
+
         if (choices.length() == 4) {
-            setPassword(lowUpSymNum(passlen));
+            setPassword(fourChoices(passwordLength));
         } else if (choices.length() == 3) {
-            setPassword(threeChoices(choices, passlen));
+            setPassword(threeChoices(choices, passwordLength));
         } else if (choices.length() == 2) {
-            setPassword(twoChoices(choices, passlen));
+            setPassword(twoChoices(choices, passwordLength));
         } else if (choices == "L") {
-            setPassword(PasswordGenerator.generateLCLetters(passlen));
+            setPassword(passwordGenerator.generateLCLetters(passwordLength));
         } else if (choices == "U") {
-            setPassword(PasswordGenerator.generateUCLetters(passlen));
+            setPassword(passwordGenerator.generateUCLetters(passwordLength));
         } else if (choices == "N") {
-            setPassword(PasswordGenerator.generateNumbers(passlen));
+            setPassword(passwordGenerator.generateNumbers(passwordLength));
         } else if (choices == "S") {
-            setPassword(PasswordGenerator.generateSymbols(passlen));
+            setPassword(passwordGenerator.generateSymbols(passwordLength));
         }
     }
 
     // When all checkboxes are selected
-
-    public static String lowUpSymNum(int len) {
+    public String fourChoices(int len) {
         String password = "";
         for (int i = 0; i < len; i++) {
             double d = (Math.random() * (5 - 1)) + 1;     // Random numbers between 1 and 4
@@ -45,52 +48,61 @@ public class NewPassword extends Password {
     }
 
     // Generating password with other Criteria:
-    private static String getString(String password, int num, String choice) {
+    private String getString(String password, int num, String choice) {
+
         switch (num) {
-            case 1 -> choice = PasswordGenerator.generateLCLetters(1);
-            case 2 -> choice = PasswordGenerator.generateUCLetters(1);
-            case 3 -> choice = PasswordGenerator.generateSymbols(1);
-            case 4 -> choice = PasswordGenerator.generateNumbers(1);
-            default -> {
-            }
+            case 1 -> choice = passwordGenerator.generateLCLetters(1);
+            case 2 -> choice = passwordGenerator.generateUCLetters(1);
+            case 3 -> choice = passwordGenerator.generateSymbols(1);
+            case 4 -> choice = passwordGenerator.generateNumbers(1);
         }
         password += choice;
         return password;
     }
 
     // When only Two Choices are selected
-    public static String twoChoices(String code, int len){
+    public String twoChoices(String code, int len){
         String password = "";
+        // Making Password one Character at a time
         for(int i=0;i<len;i++){
-            double binar = (Math.random()*(2))+0;     // Random number 1 or 2
+            double binar = (Math.random()*(2))+0;     // Random number will be either 1 or 0
             double one = (Math.random()*(2-1))+1;       // Random number 1
             double two = (Math.random()*(3-2))+2;       // Random number 2
             double three = (Math.random()*(4-3))+3;     // Random number 3
             double four = (Math.random()*(5-4))+4;      // Random number 4
             double finalans = switch (code) {
+                // When lowercase letters checkbox & symbols checkbox are selected
+                // if Binar variable is 0, then lowercase letters will be generated; if Binar variable is 1, then symbols will be generated
                 case "LS", "SL" -> (int) binar == 0 ? one : three;
                 // When lowercase letters checkbox & numbers checkbox are selected
+                // if Binar variable is 0, then lowercase letters will be generated; if Binar variable is 1, then numbers will be generated
                 case "LN", "NL" -> (int) binar == 0 ? one : four;
                 // When lowercase letters checkbox & uppercase letters' checkbox are selected
+                // if Binar variable is 0, then lowercase letters will be generated; if Binar variable is 1, then uppercase letters will be generated
                 case "LU", "UL" -> (int) binar == 0 ? one : two;
                 // When uppercase letters checkbox & numbers checkbox are selected
+                // if Binar variable is 0, then uppercase letters will be generated; if Binar variable is 1, then numbers will be generated
                 case "UN", "NU" -> (int) binar == 0 ? two : four;
                 // When symbols checkbox & uppercase letters' checkbox are selected
+                // if Binar variable is 0, then symbols will be generated; if Binar variable is 1, then uppercase letters will be generated
                 case "SU", "US" -> (int) binar == 0 ? three : two;
                 // When numbers checkbox & symbols checkbox are selected
+                // if Binar variable is 0, then numbers will be generated; if Binar variable is 1, then symbols will be generated
                 case "NS", "SN" -> (int) binar == 0 ? four : three;
                 default -> 0;
-                //When lowercase letters checkbox & symbols checkbox are selected
             };
+            // get the magic code in the switch statement above; Typecast it to int and assign it to the num variable
             int num = (int)finalans;
             String choice = "";
+            //use the getString method to generate the appropriate charachter in the current iteration of the loop
             password = getString(password, num, choice);
         }
+        //return the generated password once the loop has ended and we have a passwiord of the desired length
         return password;
     }
 
     // When only Three Choices are selected
-    public static String threeChoices(String code, int len){
+    public String threeChoices(String code, int len){
         String password = "";
         for(int i=0;i<len;i++){
             double trio = (Math.random()*(3))+0;
@@ -101,8 +113,6 @@ public class NewPassword extends Password {
             double finalans=0;
             switch (code) {
                 case "LUN":
-                case "ULN":
-                case "NLU":
                     if ((int) trio % 2 == 0) {
                         finalans = (int) trio == 0 ? one : two;
                     } else {
@@ -110,8 +120,6 @@ public class NewPassword extends Password {
                     }
                     break;
                 case "LUS":
-                case "USL":
-                case "SLU":
                     if ((int) trio % 2 == 0) {
                         finalans = (int) trio == 0 ? one : two;
                     } else {
@@ -119,8 +127,6 @@ public class NewPassword extends Password {
                     }
                     break;
                 case "LNS":
-                case "NLS":
-                case "SNL":
                     if ((int) trio % 2 == 0) {
                         finalans = (int) trio == 0 ? one : three;
                     } else {
@@ -128,8 +134,6 @@ public class NewPassword extends Password {
                     }
                     break;
                 case "UNS":
-                case "SUN":
-                case "NUS":
                     if ((int) trio % 2 == 0) {
                         finalans = (int) trio == 0 ? two : three;
                     } else {

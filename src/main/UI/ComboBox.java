@@ -6,9 +6,6 @@ import java.awt.*;
 public class ComboBox {
     JComboBox comboBox;
 
-    public ComboBox() {
-    }
-
     public JComboBox getComboBox() {
         return comboBox;
     }

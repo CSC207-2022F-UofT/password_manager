@@ -9,7 +9,7 @@ import java.awt.event.ActionListener;
 public class StrengthCheckerBox implements ActionListener {
     DialogBox dialogBox;
     Label inputLabel, resultLabel, suggestionLabel;
-    TextField passwordTextField;
+    textField passwordTextField;
     Icon icon;
     Button checkPasswordButton;
     String customPasswordValue;
@@ -19,7 +19,7 @@ public class StrengthCheckerBox implements ActionListener {
         dialogBox.createDialogBox("Strength Checker", 400, 360);
         inputLabel = new Label();
         inputLabel.createLabel(70, 60, 260, 30, dialogBox.getJframe(), "Enter your password to check its strength", Color.blue);
-        passwordTextField = new TextField();
+        passwordTextField = new textField();
         passwordTextField.createTextField(dialogBox.getJframe(),100,100,200,30);
         icon = new Icon();
         icon.createIcon("../resources/icons/password.png");

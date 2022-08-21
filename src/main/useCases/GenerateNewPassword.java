@@ -5,7 +5,7 @@ import entities.NewPassword;
 public class GenerateNewPassword {
     NewPassword newPassword = new NewPassword();
     public void generateNewPassword(int passlen ,String choices) {
-        newPassword.setPasslen(passlen);
+        newPassword.setPasswordLength(passlen);
         newPassword.setChoices(choices);
         newPassword.generatePassword();
     }

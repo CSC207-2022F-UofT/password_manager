@@ -2,44 +2,45 @@ package entities;
 
 public class PasswordGenerator {
 
-    public static String generateLCLetters(int len) {
-        StringBuilder lc = new StringBuilder();
+
+    public String generateLCLetters(int len) {
+        StringBuilder lowerCaseLetters = new StringBuilder();
         for (int i = 1; i <= len; i++) {
             double d = (Math.random() * (122 - 97)) + 97;       // ASCII values between 97 to 122
             int num = (int) d;
             String s = Character.toString((char) num);
-            lc.append(s);
+            lowerCaseLetters.append(s);
         }
-        return lc.toString();
+        return lowerCaseLetters.toString();
     }
 
     // Function to generate only uppercase letters of length specified in argument
-    public static String generateUCLetters(int len) {
-        StringBuilder uc = new StringBuilder();
+    public String generateUCLetters(int len) {
+        StringBuilder upperCaseLetters = new StringBuilder();
         for (int i = 1; i <= len; i++) {
             double d = (Math.random() * (91 - 65)) + 65;      // ASCII values between 65 to 91
             int num = (int) d;
             String s = Character.toString((char) num);
-            uc.append(s);
+            upperCaseLetters.append(s);
         }
-        return uc.toString();
+        return upperCaseLetters.toString();
     }
 
     // Function to generate only digits of length specified in argument
-    public static String generateNumbers(int len) {
-        StringBuilder numletters = new StringBuilder();
+    public String generateNumbers(int len) {
+        StringBuilder numberLetters = new StringBuilder();
         for (int i = 1; i <= len; i++) {
             double d = (Math.random() * (57 - 48)) + 48;      // ASCII values between 48 to 57
             int num = (int) d;
             String s = Character.toString((char) num);
-            numletters.append(s);
+            numberLetters.append(s);
         }
-        return numletters.toString();
+        return numberLetters.toString();
     }
 
     // Function to generate only symbols of length specified in argument
-    public static String generateSymbols(int len) {
-        StringBuilder symbletters = new StringBuilder();
+    public String generateSymbols(int len) {
+        StringBuilder symbolLetters = new StringBuilder();
         for (int i = 1; i <= len; i++) {
             double choice = (Math.random() * (5 - 1)) + 1;      // Random numbers between 1 and 4
             int choicenum = (int) choice;
@@ -55,9 +56,9 @@ public class PasswordGenerator {
             }
             int num = (int) d;
             String s = Character.toString((char) num);
-            symbletters.append(s);
+            symbolLetters.append(s);
         }
-        return symbletters.toString();
+        return symbolLetters.toString();
     }
 
 }

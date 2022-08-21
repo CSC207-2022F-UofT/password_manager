@@ -2,11 +2,8 @@ package UI;
 
 import javax.swing.*;
 
-public class TextField {
-    JTextField textField;
-
-    public TextField() {
-    }
+public class textField {
+    private JTextField textField;
 
     public JTextField getTextField() {
         return textField;
