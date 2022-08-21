@@ -7,6 +7,12 @@ public class NewPassword extends Password {
 
     private PasswordGenerator passwordGenerator = new PasswordGenerator();
 
+    //Defining constants L, U, N, S for lowercase, uppercase, number, special characters
+    private final String L = "L";
+    private final String U = "U";
+    private final String N = "N";
+    private final String S = "S";
+    
 
     public void setPasswordLength(int passwordLength) {
         this.passwordLength = passwordLength;
@@ -24,13 +30,13 @@ public class NewPassword extends Password {
             setPassword(threeChoices(choices, passwordLength));
         } else if (choices.length() == 2) {
             setPassword(twoChoices(choices, passwordLength));
-        } else if (choices == "L") {
+        } else if (choices == L) {
             setPassword(passwordGenerator.generateLCLetters(passwordLength));
-        } else if (choices == "U") {
+        } else if (choices == U) {
             setPassword(passwordGenerator.generateUCLetters(passwordLength));
-        } else if (choices == "N") {
+        } else if (choices == N) {
             setPassword(passwordGenerator.generateNumbers(passwordLength));
-        } else if (choices == "S") {
+        } else if (choices == S) {
             setPassword(passwordGenerator.generateSymbols(passwordLength));
         }
     }
