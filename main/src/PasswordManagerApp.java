@@ -1,7 +1,5 @@
-package src;
-import UI.PasswordGeneratorBox;
 import UI.StrengthCheckerBox;
-
+import UI.PasswordGeneratorBox;
 public class PasswordManagerApp {
     static void computePasswordStrength() {
         StrengthCheckerBox strengthCheckerBox = new StrengthCheckerBox();
