@@ -60,6 +60,26 @@ public class NewPassword extends Password {
         return password;
     }
 
+    /**
+     * @author: Rutvik Solanki
+     *
+     *     When only Two/Three Choices are selected, the password starts with empty string, and iteratively one charachter is added to the string.
+     *     The charachter is randomly genertaed using the math.random() function.
+     *     The curernt method works in the following way:
+     *     To maximize the randomness, each time a binary variable is used to track what charachter needs to be added from the two choices.
+     *     If Binary variable is 0, then the charachter is added from the first choice. If Binary variable is 1, then the charachter is added from the second choice.
+     *     A final number is generated between 1 and 4. This number is used to determine which choice to add the charachter from.
+     *     The formula for the final number is made such that it correlated to four(All) possible choices of 2 from 4.
+     *     This number when passed to the getString() function, will generate and return an appropriate charachter.
+     *     The final password is returned.
+     *
+     *
+     *
+     * @param code the Code for the Choices Selected, Eg: L, LU,N, LUNS
+     * @param len The password length provided by the user
+     * @return password The final password generated using the getString method
+     */
+
     // When only Two Choices are selected
     public String twoChoices(String code, int len){
         String password = "";
