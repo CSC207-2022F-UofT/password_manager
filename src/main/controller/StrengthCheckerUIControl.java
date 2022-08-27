@@ -1,5 +1,5 @@
 package controller;
-import useCases.ComputePasswordStrength;
+import use_cases.ComputePasswordStrength;
 
 public class StrengthCheckerUIControl {
     String result;

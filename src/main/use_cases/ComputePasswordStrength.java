@@ -1,4 +1,4 @@
-package useCases;
+package use_cases;
 
 import entities.CustomPassword;
 
