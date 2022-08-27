@@ -1,7 +1,7 @@
 package controller;
 import useCases.ComputePasswordStrength;
 
-public class StrengthCheckerUIControl extends UIController {
+public class StrengthCheckerUIControl {
     String result;
     String suggestion;
 
