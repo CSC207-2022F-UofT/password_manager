@@ -8,9 +8,6 @@ import java.awt.event.ActionListener;
 public class DialogBox implements ActionListener {
     JFrame jframe;
 
-    public DialogBox() {
-    }
-
     public JFrame getJframe() {
         return jframe;
     }

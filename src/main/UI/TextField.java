@@ -5,9 +5,6 @@ import javax.swing.*;
 public class TextField {
     JTextField textField;
 
-    public TextField() {
-    }
-
     public JTextField getTextField() {
         return textField;
     }
