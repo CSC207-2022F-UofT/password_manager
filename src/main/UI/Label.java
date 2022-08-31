@@ -6,6 +6,10 @@ import java.awt.*;
 public class Label {
     JLabel label;
 
+    /**
+     * Returns class variable label
+     * @return
+     */
     public JLabel getLabel() {
         return label;
     }
