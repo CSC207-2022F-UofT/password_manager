@@ -1,4 +1,4 @@
-package src.entities;
+package entities;
 
 public class Criteria {
     /**
@@ -20,7 +20,7 @@ public class Criteria {
         else if (password.matches("(.)*(\\s)+(.)*")) {
             suggestion.setSuggestion("Whitespace not allowed");
         }
-        // Check if password is greater than 8 chars
+        // Check if password is greater than or equal to 8 chars
         else if (password.length() < 8) {
             suggestion.setSuggestion("Add more characters");
         }

@@ -1,10 +1,10 @@
-package src.entities;
+package entities;
 
 public abstract class Password {
     String passwordValue;
 
     /**
-     * Both methods should be over-ridden by child classes.
+     * Methods can be over-ridden by child classes.
      */
     public String getPassword() {return null;}
     public void setPassword(String password) {

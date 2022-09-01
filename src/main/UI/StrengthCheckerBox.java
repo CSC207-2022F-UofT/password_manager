@@ -1,17 +1,12 @@
-package src.controller;
+package UI;
 
-import src.UI.Button;
-import src.UI.DialogBox;
-import src.UI.Icon;
-import src.UI.Label;
-import src.UI.TextField;
-import src.useCases.ComputePasswordStrength;
+import controller.StrengthCheckerUIControl;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.util.ArrayList;
+import java.awt.event.ActionListener;
 
-public class StrengthCheckerUIControl extends UIController {
+public class StrengthCheckerBox implements ActionListener {
     DialogBox dialogBox;
     Label inputLabel, resultLabel, suggestionLabel;
     TextField passwordTextField;
@@ -19,6 +14,9 @@ public class StrengthCheckerUIControl extends UIController {
     Button checkPasswordButton;
     String customPasswordValue;
 
+    /**
+     * Creates all UI components of StrengthCheckerBox UI
+     */
     public void createStrengthCheckerBox() {
         dialogBox = new DialogBox();
         dialogBox.createDialogBox("Strength Checker", 400, 360);
@@ -33,28 +31,29 @@ public class StrengthCheckerUIControl extends UIController {
         checkPasswordButton.getButton().addActionListener(this);
     }
 
-    public void invokeStrengthCheckerUseCase() {
-        ComputePasswordStrength computePasswordStrength = new ComputePasswordStrength();
-        computePasswordStrength.computeStrength(customPasswordValue);
-        setResult(computePasswordStrength.getStrength());
-        setSuggestion(computePasswordStrength.getSuggestion());
-    }
-
-    public void setResult(String resultText) {
+    private void setResult(String resultText) {
         resultLabel = new Label();
         resultLabel.createLabel(170, 200, 150, 30, dialogBox.getJframe(), "", Color.red);
         resultLabel.getLabel().setText(resultText);
     }
 
-    public void setSuggestion(String suggestion) {
+    private void setSuggestion(String suggestion) {
         suggestionLabel = new Label();
         suggestionLabel.createLabel(130, 230, 150, 30, dialogBox.getJframe(), "", Color.red);
         suggestionLabel.getLabel().setText(suggestion);
     }
 
+    /**
+     * When the user clicks on Submit button, this Action is triggered
+     * It then invokes the thread for checking the strength of the custom password provided by user
+     * @param e
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         customPasswordValue = passwordTextField.getTextField().getText();
-        invokeStrengthCheckerUseCase();
+        StrengthCheckerUIControl strengthCheckerUIControl = new StrengthCheckerUIControl();
+        strengthCheckerUIControl.performStrengthCheck(customPasswordValue);
+        setResult(strengthCheckerUIControl.getResult());
+        setSuggestion(strengthCheckerUIControl.getSuggestion());
     }
 }
