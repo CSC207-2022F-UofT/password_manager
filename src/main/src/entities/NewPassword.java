@@ -12,7 +12,6 @@ public class NewPassword extends Password {
     private final String U = "U";
     private final String N = "N";
     private final String S = "S";
-    
 
     public void setPasswordLength(int passwordLength) {
         this.passwordLength = passwordLength;
@@ -30,13 +29,13 @@ public class NewPassword extends Password {
             setPassword(threeChoices(choices, passwordLength));
         } else if (choices.length() == 2) {
             setPassword(twoChoices(choices, passwordLength));
-        } else if (choices == L) {
+        } else if (choices.equals(L)) {
             setPassword(passwordGenerator.generateLCLetters(passwordLength));
-        } else if (choices == U) {
+        } else if (choices.equals(U)) {
             setPassword(passwordGenerator.generateUCLetters(passwordLength));
-        } else if (choices == N) {
+        } else if (choices.equals(N)) {
             setPassword(passwordGenerator.generateNumbers(passwordLength));
-        } else if (choices == S) {
+        } else if (choices.equals(S)) {
             setPassword(passwordGenerator.generateSymbols(passwordLength));
         }
     }
@@ -67,16 +66,16 @@ public class NewPassword extends Password {
     }
 
     /**
-     * @author: Rutvik Solanki
+     * @author Rutvik Solanki
      *
-     *     When only Two/Three Choices are selected, the password starts with empty string, and iteratively one charachter is added to the string.
-     *     The charachter is randomly genertaed using the math.random() function.
-     *     The curernt method works in the following way:
-     *     To maximize the randomness, each time a binary variable is used to track what charachter needs to be added from the two choices.
-     *     If Binary variable is 0, then the charachter is added from the first choice. If Binary variable is 1, then the charachter is added from the second choice.
-     *     A final number is generated between 1 and 4. This number is used to determine which choice to add the charachter from.
+     *     When only Two/Three Choices are selected, the password starts with empty string, and iteratively one character is added to the string.
+     *     The character is randomly generated using the math.random() function.
+     *     The current method works in the following way:
+     *     To maximize the randomness, each time a binary variable is used to track what character needs to be added from the two choices.
+     *     If Binary variable is 0, then the character is added from the first choice. If Binary variable is 1, then the character is added from the second choice.
+     *     A final number is generated between 1 and 4. This number is used to determine which choice to add the character from.
      *     The formula for the final number is made such that it correlated to four(All) possible choices of 2 from 4.
-     *     This number when passed to the getString() function, will generate and return an appropriate charachter.
+     *     This number when passed to the getString() function, will generate and return an appropriate character.
      *     The final password is returned.
      *
      *
