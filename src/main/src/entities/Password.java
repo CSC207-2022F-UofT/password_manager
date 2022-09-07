@@ -6,7 +6,7 @@ public abstract class Password {
     /**
      * Methods can be over-ridden by child classes.
      */
-    public String getPassword() {return null;}
+    public String getPassword() {return passwordValue;}
     public void setPassword(String password) {
         passwordValue = password;
     }

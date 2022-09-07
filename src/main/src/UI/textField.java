@@ -2,7 +2,7 @@ package UI;
 
 import javax.swing.*;
 
-public class TextField {
+public class textField {
     JTextField textField;
 
     /**
