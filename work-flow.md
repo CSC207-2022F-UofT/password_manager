@@ -27,4 +27,4 @@ Development Workflow:
 </ol>
 Note: I know this seems like a lot of steps for implementing one feature. In coding, I find it very helpful to set aside a relatively large chunk of time (at least an hour, preferably two or more for a larger task) and try to complete this whole process from start to finish. Not only does this help prevent merge conflicts, but also is much more efficient than stopping and starting a bunch of times and having to remember where you were and what you were trying to do. Therefore, it is important to break big tasks into smaller chunks and do them one at a time (which is much easier when your code follows SRP and Clean Architecture!).
 
-
+ 
